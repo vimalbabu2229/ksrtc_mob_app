@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class MyWidget extends StatefulWidget {
@@ -14,43 +12,57 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        // Ensures content stays within screen bounds
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: <Color>[
+              Color(0xffF2F3FF),
+              Color(0xffB8BAD9),
+            ],
+          ),
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // Top box with text and inner box
+            const Padding(
+              padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
+              child: Text(
+                "Today's Schedule",
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              ),
+            ),
             Container(
-              //margin: const EdgeInsets.fromLTRB(0, 00, 0, 0),
-              color: Color(0xFFE1E6FF),
-              width: double.infinity,
-              height: 200,
-              child: Stack(
-                children: [
-                  Text('vhgvghv',
-                      style: TextStyle(
-                          fontSize: 30.0)), // Text positioned in the center
-                  Positioned(
-                    // Inner box positioned at the bottom
-                    bottom: 0.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      height: 50.0,
-                      color: Color(0xFFDADEF1),
-                    ),
-                  ),
-                ],
-              ),
+              width: 350,
+              height: 210,
+              decoration: BoxDecoration(
+                  color: const Color(0xffDADEF1),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 15.0,
+                        //blurStyle: BlurStyle.normal,
+                        offset: Offset(0.0, 5.0)),
+                  ]),
             ),
-
-            // Bottom box with scrollable schedules (replace with your schedule widget)
             Expanded(
-              child: Container(
-                color: Colors.red,
-                child:
-                    Text('Your Schedules'), // Replace with your schedule widget
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: const Color(0xff3E4073),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30))),
+
+                  // Add your content here
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -13,7 +12,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFB1B8DE),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -81,10 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 51,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(Notification);
+                  //Get.to(Notification);
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFA40606),
+                    backgroundColor: const Color(0xFF3E4073),
                     foregroundColor: Colors.white),
                 child: Text('Login',
                     style: GoogleFonts.poppins(
