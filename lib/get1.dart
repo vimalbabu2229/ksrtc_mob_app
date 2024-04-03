@@ -1,9 +1,12 @@
 
+
 import 'package:flutter/material.dart';
+//import 'package:get/get.dart';
 
 // ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -47,7 +50,13 @@ class MyWidget extends StatelessWidget {
          decoration: BoxDecoration
          (borderRadius: BorderRadius.only
          (topLeft: Radius.circular(30),topRight: Radius.circular(30)),
-         color: Color.fromRGBO(227, 229, 250, 1),
+         gradient: LinearGradient(begin: Alignment.topCenter,
+         end:Alignment.bottomCenter,
+          colors: [
+          Color.fromRGBO(242, 243, 255, 1),
+           Color.fromRGBO(184, 186, 217, 1)
+         ]),
+        // color: Color.fromRGBO(227, 229, 250, 1),
          boxShadow:[ BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.25),
               offset:Offset(10, 10),blurRadius: 20
@@ -69,7 +78,7 @@ class MyWidget extends StatelessWidget {
               fontWeight: FontWeight.bold)),
               
               ),
-              margin: EdgeInsets.only(top:30,right:250),
+              margin: EdgeInsets.only(top:30,right:280),
               ),
               
        
@@ -87,7 +96,7 @@ class MyWidget extends StatelessWidget {
             ),
             
              height: 385 ,
-             margin: EdgeInsets.only(left: 20,right: 20,top: 40),
+             margin: EdgeInsets.only(left: 20,right: 20,top: 20),
 
 
              child: Column( 
@@ -97,7 +106,12 @@ class MyWidget extends StatelessWidget {
 
           decoration:BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30)),
-            color: Color.fromRGBO(227, 229, 250, 1),
+            gradient: LinearGradient(begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Color.fromRGBO(207, 211, 237, 1 ),
+              Color.fromRGBO(238, 240, 255, 1)
+            ],),
             boxShadow:[ BoxShadow(
            color: Color.fromRGBO(0, 0, 0, 0.25),
            offset:Offset(10, 10),blurRadius: 20
@@ -109,29 +123,158 @@ class MyWidget extends StatelessWidget {
              width: double.infinity,
              margin: EdgeInsets.only(left: 17,right: 17,top: 30,),
 
-             child:Align(
-              alignment: Alignment.center,
+             // padding:EdgeInsets.only(bottom: 5,left: 150,right: 10),
+             child: Row(
+             children:[ 
+              CircleAvatar(
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(255, 255, 255, 1),
+                      Color.fromRGBO(198, 200, 222, 1),
+                      
+                      
+                    ]),
+                    
+                  ),
+                  
+                  child: CircleAvatar(
+                    radius:17,
+                    child:Container(
+                      decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(221, 225, 231, 1),
+                      Color.fromRGBO(250, 251, 252, 1),
+                      
+                      
+                    ]),
+                    
+                  ),
+                  child: Icon (Icons.exit_to_app_rounded,
+                  color: Color.fromRGBO(62, 64, 115, 1),
+                  ),
+                  alignment: Alignment.center,
+                    )
+                  ),
                
-                child: Text(' Leave type',
-                     style:GoogleFonts.montserrat(
-                     textStyle: TextStyle(
-                     color: Color.fromRGBO(16, 16, 16, 1),
-                     fontSize: 15 ,
-                     fontWeight: FontWeight.w100,),),
+                  alignment: Alignment.center,  
+                 ),
               
+                ),
+                
               
-              
-              
+             
+             Container(
+              width: 30,
+             ),
+              Expanded(
+                child: TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Leave Type',   
+                
               ),
-             // margin: EdgeInsets.only(top:30,right:250),
-                  )  ),
+
+              style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w600),
+              
+             ),
+             
+                )
+             
+             ], )
+             ),
                 
         
-              Container(
+             Container(
 
           decoration:BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30)),
-            color: Color.fromRGBO(227, 229, 250, 1),
+             gradient: LinearGradient(begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Color.fromRGBO(207, 211, 237, 1 ),
+              Color.fromRGBO(238, 240, 255, 1)
+            ],),
+            boxShadow:[ BoxShadow(
+           color: Color.fromRGBO(0, 0, 0, 0.25),
+           offset:Offset(10, 10),blurRadius: 20
+             )
+             ],  
+            ),
+            
+             height: 44,
+             margin: EdgeInsets.only(left: 17,right: 17,top: 16,),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  child: Container(
+                      decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(255, 255, 255, 1),
+                      Color.fromRGBO(198, 200, 222, 1),  
+
+                    ]),
+                    
+                  ),
+                  child: CircleAvatar(
+                    radius: 17,
+                    child: Container(
+                       decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(221, 225, 231, 1),
+                      Color.fromRGBO(250, 251, 252, 1),
+                      
+                      
+                    ]),
+                    
+                  ),
+                  child: Icon (Icons.calendar_month_rounded,
+                  color: Color.fromRGBO(62, 64, 115, 1),
+                  ),
+                  alignment: Alignment.center,
+                    )
+                  ),
+               
+                  alignment: Alignment.center,  
+                 ),
+              
+                ),
+                
+              
+             
+             Container(
+              width: 50,
+             ),
+             
+             
+             ], )
+             ),
+               
+
+            
+         
+
+
+         
+
+         Container(
+
+          decoration:BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+            gradient: LinearGradient(begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Color.fromRGBO(207, 211, 237, 1 ),
+              Color.fromRGBO(238, 240, 255, 1)
+            ],),
             boxShadow:[ BoxShadow(
            color: Color.fromRGBO(0, 0, 0, 0.25),
            offset:Offset(10, 10),blurRadius: 20
@@ -141,27 +284,68 @@ class MyWidget extends StatelessWidget {
             
              height: 44,
              margin: EdgeInsets.only(left: 17,right: 17,top: 16,),
-         ),
-         Container(
+             child: Row(
+              children: [
+                CircleAvatar(
+                  child: Container(
+                      decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(255, 255, 255, 1),
+                      Color.fromRGBO(198, 200, 222, 1),  
 
-          decoration:BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            color: Color.fromRGBO(227, 229, 250, 1),
-            boxShadow:[ BoxShadow(
-           color: Color.fromRGBO(0, 0, 0, 0.25),
-           offset:Offset(10, 10),blurRadius: 20
-             )],
+                    ]),
+                    
+                  ),
+                  child: CircleAvatar(
+                    radius: 17,
+                    child: Container(
+                       decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(221, 225, 231, 1),
+                      Color.fromRGBO(250, 251, 252, 1),
+                      
+                      
+                    ]),
+                    
+                  ),
+                  child: Icon (Icons.calendar_month_rounded,
+                  color: Color.fromRGBO(62, 64, 115, 1),
+                  ),
+                  alignment: Alignment.center,
+                    )
+                  ),
+               
+                  alignment: Alignment.center,  
+                 ),
               
-            ),
-            
-             height: 44,
-             margin: EdgeInsets.only(left: 17,right: 17,top: 16,),
-         ),
+                ),
+                
+              
+             
+             Container(
+              width: 50,
+             ),
+             
+             
+             ], )
+             ),
+               
+
+         
          Container(
 
           decoration:BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30)),
-            color: Color.fromRGBO(227, 229, 250, 1),
+            gradient: LinearGradient(begin: Alignment.topCenter,
+            end:Alignment.bottomCenter,
+            colors:[
+              Color.fromRGBO(207, 211, 237, 1 ),
+              Color.fromRGBO(238, 240, 255, 1)
+            ],),
             boxShadow:[ BoxShadow(
            color: Color.fromRGBO(0, 0, 0, 0.25),
            offset:Offset(10, 10),blurRadius: 20
@@ -171,13 +355,20 @@ class MyWidget extends StatelessWidget {
             
              height: 144,
              margin: EdgeInsets.only(left: 17,right: 17,top: 16,),
-            // child: Text('Reason for Leave',style: GoogleFonts.montserrat(textStyle:TextStyle(color:Color.fromRGBO(0, 0, 0, 0.6) ),fontSize:15),),
+             padding: EdgeInsets.only(left:70 ),
+             child:TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Details' 
+              ),
+              maxLines: 6,
+              style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w600),
+              
+             ),
          ),
-
-         
-        ])
+         ])
           
-            //Text('Apply for leave',style:GoogleFonts.poppins(textStyle: TextStyle(color: Color.fromRGBO(16, 16, 16, 1),fontSize: 15 ,)),textAlign:TextAlign.left,),
+         
           
         ),
          Center(
@@ -195,7 +386,8 @@ class MyWidget extends StatelessWidget {
         )
         
         ),
-      Container(
+        Expanded( 
+     child: Container(
 
           decoration:BoxDecoration(borderRadius: BorderRadius.only(topLeft:Radius.circular(30),
           topRight: Radius.circular(30)),color: Color.fromRGBO(62, 64, 115, 1),
@@ -208,7 +400,8 @@ class MyWidget extends StatelessWidget {
             
              height: 92,
              width: double.infinity,
-             margin: EdgeInsets.only(bottom: 0,left: 0,right: 0,),
+             margin: EdgeInsets.only(top:27, left: 0,right: 0,bottom: 0),
+             padding: EdgeInsets.only(bottom: 10,top:10,right: 10,left: 10),
               //Text('Apply for leave',style:GoogleFonts.poppins(textStyle: TextStyle(color: Color.fromRGBO(16, 16, 16, 1),fontSize: 15 ,)),textAlign:TextAlign.left,),
               
          child: Container(
@@ -224,7 +417,7 @@ class MyWidget extends StatelessWidget {
             
              height: 20,
              width:158,
-             margin: EdgeInsets.only(left: 117,right: 117,top: 21.5,bottom:21),
+             margin: EdgeInsets.only(left: 150,right: 150,top: 21.5,bottom:21),
 
              child:ElevatedButton(onPressed: (){}, 
             style:ButtonStyle(
@@ -256,7 +449,7 @@ class MyWidget extends StatelessWidget {
               ),
                
                ),)
-       ) ]),
+       ) )]),
       
       
       )

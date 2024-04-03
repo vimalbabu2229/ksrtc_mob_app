@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 // ignore: unused_import
+import 'package:get/get.dart';
+// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -52,9 +54,10 @@ class MyWidget extends StatelessWidget {
              color: Color.fromRGBO(16, 16, 16, 1),
               fontSize: 17 ,
               fontWeight: FontWeight.bold)),
-              
+              softWrap: false,
               ),
-              margin: EdgeInsets.only(top:41,right:350),
+              margin: EdgeInsets.only(left:20,top:41, ),
+              padding: EdgeInsets.only(right:350),
              )
         ,
 
@@ -88,12 +91,14 @@ class MyWidget extends StatelessWidget {
                 )),
                 height: 47,
                 width: double.infinity,
-
-                child: Text('\n Steering Duty : 8:35',
+                padding: EdgeInsets.all(10),
+                
+                child: Text(' Steering Duty : 8:35',
                 style: GoogleFonts.montserrat(
                   textStyle:TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 0.6),
-                  fontSize: 15
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600
                   ),),textAlign:TextAlign.center),
                 ),
 
@@ -107,12 +112,14 @@ class MyWidget extends StatelessWidget {
                 ) )),
                 height: 47,
                 width: double.infinity,
+                padding: EdgeInsets.all(10),
 
-                child: Text('\nSpread Over : 8:35',
+                child: Text('Spread Over : 8:35',
                 style: GoogleFonts.montserrat(
                  textStyle:TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 0.6),
                   fontSize: 15,
+                  fontWeight: FontWeight.w600
                   
                   ),),textAlign:TextAlign.center
                   ),
@@ -125,13 +132,16 @@ class MyWidget extends StatelessWidget {
                 bottom: BorderSide
                 (width: .7,color: Color.fromRGBO(0, 0, 0, 0.1),))),
                 height: 47,
+                
                 width: double.infinity,
+                padding: EdgeInsets.all(10),
 
-                child: Text('\nCompanion : Aneesh Kumar',
+                child: Text('Companion : Aneesh Kumar',
                 style: GoogleFonts.montserrat(
                   textStyle:TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 0.6),
-                  fontSize: 15
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600
                   ),),
                   textAlign:TextAlign.center
                   ),
@@ -146,13 +156,14 @@ class MyWidget extends StatelessWidget {
                 (width: .7,color: Color.fromRGBO(0, 0, 0, 0.1),))),
                 height: 55,
                 width: double.infinity,
+                padding: EdgeInsets.all(10),
 
-                child: Text('\nVehicle : RY56783',
+                child: Text('Vehicle : RY56783',
                 style: GoogleFonts.montserrat(
                   textStyle:TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 0.6),
-                  
-                  fontSize: 15
+                   fontSize: 15,
+                   fontWeight: FontWeight.w600
                   ),),
                   textAlign:TextAlign.center
                   ),
@@ -162,7 +173,7 @@ class MyWidget extends StatelessWidget {
 
       ),
 
-      
+      Expanded(child: 
       Container(
 
           decoration:BoxDecoration(borderRadius: BorderRadius.only(topLeft:Radius.circular(30),
@@ -194,19 +205,142 @@ class MyWidget extends StatelessWidget {
                           itemCount: 10,
                           
                 itemBuilder:(context,index){ 
+                  
              return Container(
                decoration: BoxDecoration( color: Color.fromRGBO(62, 64, 115, 1),border:Border(
                 bottom: BorderSide(width: 1,color: Color.fromRGBO(255, 255, 255, 0.6),),
                )),
-              height: 100,
-              
+              height: 112,
              width:double.infinity,
+               child:Column(
+                
+               children:[
+                Container(
+                  height: 15,
+                ),
+                
+                Row(
+                
+                 children: [
+                  
+                  Padding(padding: EdgeInsets.only(left: 20,)),
+                  
+                CircleAvatar(
+                  
+                  child: Container(
+                      decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(255, 255, 255, 1),
+                      Color.fromRGBO(198, 200, 222, 1),  
+
+                    ]),
+                    
+                  ),
+                  child: CircleAvatar(
+                    radius: 17,
+                    child: Container(
+                       decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(221, 225, 231, 1),
+                      Color.fromRGBO(250, 251, 252, 1),
+                      
+                      
+                    ]),
+                    
+                  ),
+                  child: Icon (Icons.schedule_send,
+                  color: Color.fromRGBO(62, 64, 115, 1),
+                  ),
+                  alignment: Alignment.center,
+                  
+                    )
+                  ),
+                  alignment: Alignment.center,  
+                  
+                 ),
+                 
+                ),
+                
+              
+              
+             
+             Container(
+              width: 95,
+              child: Text('3:40\nParassala',style: GoogleFonts.montserrat(
+                  textStyle:TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  
+                  )
+                  ),
+                  softWrap: false,
+                  
+                  ),
+                  padding: EdgeInsets.only(left: 16),
+             ),
+             Container(
+              width: 95,
+              child: Text('NH',style: GoogleFonts.montserrat(
+                  textStyle:TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  
+                  ),
+                  
+                  ),
+                  softWrap: false,
+                  
+                  
+                  ),
+                  padding: EdgeInsets.only(left: 70),
+                 
+                  alignment: Alignment.center,
+                  
+             ),
+             Expanded(child: 
+             Container(
+            width: 50,
+              child: Text('3:45\nKalikkavila',style: GoogleFonts.montserrat(
+                  textStyle:TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  )),
+                  softWrap: false,
+                  ),
+                  padding: EdgeInsets.only(right: 20),
+                margin: EdgeInsets.only(left:140,),
+             ),),
+             
+             
+             ]
+             
+               ),
+               Container(
+              
+                child: Text('Running Time  - 5 mins ',
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color:Color.fromRGBO(255, 255, 255, 0.5),
+                    fontSize: 15,fontWeight: FontWeight.w400
+                  )
+                ),),
+                padding: EdgeInsets.only(top:4),
+               )
+               ],),
+
                );},) )
                     
 
             ],)
               
               
-)]) )  );
+))]) )  );
   }
 }
