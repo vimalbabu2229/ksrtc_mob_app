@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LeaveScreen extends StatefulWidget {
-  const LeaveScreen({super.key});
+class LeaveScreenOld extends StatefulWidget {
+  const LeaveScreenOld({super.key});
 
   @override
-  State<LeaveScreen> createState() => _LeaveScreenState();
+  State<LeaveScreenOld> createState() => _LeaveScreenOldState();
 }
 
-class _LeaveScreenState extends State<LeaveScreen> {
+class _LeaveScreenOldState extends State<LeaveScreenOld> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,8 +147,8 @@ class _LeaveScreenState extends State<LeaveScreen> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(const Color(0xFFEEEEEE)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color(0xFFEEEEEE)),
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.black),
                         shape: MaterialStateProperty.all<OutlinedBorder>(
@@ -173,8 +173,8 @@ class _LeaveScreenState extends State<LeaveScreen> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(const Color(0xFFA40606)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color(0xFFA40606)),
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                         shape: MaterialStateProperty.all<OutlinedBorder>(

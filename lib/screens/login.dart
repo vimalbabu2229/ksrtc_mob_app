@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ksrtc_mob_app/screens/navigation.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB1B8DE),
+      backgroundColor: const Color(0xFFB1B8DE),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 51,
               child: ElevatedButton(
                 onPressed: () {
-                  //Get.to(Notification);
+                  Get.to(const NavigationScreen());
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF3E4073),

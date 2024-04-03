@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ksrtc_mob_app/screens/navbar.dart';
+import 'package:get/get.dart';
+import 'package:ksrtc_mob_app/screens/navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'KSRTC Scheduling',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyWidget(),
+      home: const NavigationScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
