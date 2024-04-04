@@ -35,7 +35,12 @@ class MyWidget extends StatelessWidget {
          decoration: BoxDecoration
          (borderRadius: BorderRadius.only
          (topLeft: Radius.circular(30),topRight: Radius.circular(30)),
-         color: Color.fromRGBO(227, 229, 250, 1),
+          gradient: LinearGradient(begin: Alignment.topCenter,
+         end:Alignment.bottomCenter,
+          colors: [
+          Color.fromRGBO(242, 243, 255, 1),
+           Color.fromRGBO(184, 186, 217, 1)
+         ]),
          boxShadow:[ BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.25),
               offset:Offset(10, 10),blurRadius: 20
@@ -55,9 +60,11 @@ class MyWidget extends StatelessWidget {
               fontSize: 17 ,
               fontWeight: FontWeight.bold)),
               softWrap: false,
+              
               ),
               margin: EdgeInsets.only(left:20,top:41, ),
-              padding: EdgeInsets.only(right:350),
+              padding: EdgeInsets.only(right:300),
+              
              )
         ,
 
@@ -177,7 +184,12 @@ class MyWidget extends StatelessWidget {
       Container(
 
           decoration:BoxDecoration(borderRadius: BorderRadius.only(topLeft:Radius.circular(30),
-          topRight: Radius.circular(30)),color: Color.fromRGBO(62, 64, 115, 1),
+          topRight: Radius.circular(30)), gradient: LinearGradient(begin: Alignment.topLeft,
+            end:Alignment.bottomRight,
+            colors:[
+              Color.fromRGBO(62, 64, 115, 1 ),
+              Color.fromRGBO(43, 45, 84, 1)
+            ],)
          // boxShadow:[ BoxShadow(
          //  color: Color.fromRGBO(0, 0, 0, 0.25),
           // offset:Offset(10, 10),blurRadius: 20
@@ -207,7 +219,13 @@ class MyWidget extends StatelessWidget {
                 itemBuilder:(context,index){ 
                   
              return Container(
-               decoration: BoxDecoration( color: Color.fromRGBO(62, 64, 115, 1),border:Border(
+               decoration: BoxDecoration(  gradient: LinearGradient(begin: Alignment.topLeft,
+            end:Alignment.bottomRight,
+            colors:[
+              Color.fromRGBO(62, 64, 115, 1 ),
+              Color.fromRGBO(43, 45, 84, 1)
+            ],),
+            border:Border(
                 bottom: BorderSide(width: 1,color: Color.fromRGBO(255, 255, 255, 0.6),),
                )),
               height: 112,
