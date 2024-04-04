@@ -51,11 +51,19 @@ class ScheduleScreen extends StatelessWidget {
               margin: const EdgeInsets.only(left: 20, right: 20, top: 15),
               child: Column(
                 children: [
+                  //inner container
                   Container(
                     decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30)),
                         color: Color.fromRGBO(227, 229, 250, 1),
-                        border: Border()),
+                        border: Border(
+                          bottom: BorderSide(
+                            width: .7,
+                            color: Colors.grey,
+                          ),
+                        )),
                     height: 47,
                     width: double.infinity,
                     child: Text('\n Steering Duty : 8:35',
@@ -69,14 +77,11 @@ class ScheduleScreen extends StatelessWidget {
                     decoration: const BoxDecoration(
                         color: Color.fromRGBO(227, 229, 250, 1),
                         border: Border(
-                            bottom: BorderSide(
-                              width: .7,
-                              color: Color.fromRGBO(0, 0, 0, 0.1),
-                            ),
-                            top: BorderSide(
-                              width: .7,
-                              color: Color.fromRGBO(0, 0, 0, 0.1),
-                            ))),
+                          bottom: BorderSide(
+                            width: .7,
+                            color: Colors.grey,
+                          ),
+                        )),
                     height: 47,
                     width: double.infinity,
                     child: Text('\nSpread Over : 8:35',
@@ -94,7 +99,7 @@ class ScheduleScreen extends StatelessWidget {
                         border: Border(
                             bottom: BorderSide(
                           width: .7,
-                          color: Color.fromRGBO(0, 0, 0, 0.1),
+                          color: Colors.grey,
                         ))),
                     height: 47,
                     width: double.infinity,
@@ -107,13 +112,9 @@ class ScheduleScreen extends StatelessWidget {
                   ),
                   Container(
                     decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        color: Color.fromRGBO(227, 229, 250, 1),
-                        border: Border(
-                            bottom: BorderSide(
-                          width: .7,
-                          color: Color.fromRGBO(0, 0, 0, 0.1),
-                        ))),
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      color: Color.fromRGBO(227, 229, 250, 1),
+                    ),
                     height: 55,
                     width: double.infinity,
                     child: Text('\nVehicle number: RY56783',

@@ -20,7 +20,6 @@ class NavigationScreen extends StatelessWidget {
           activeColor: Colors.blueAccent,
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 75),
           onTabChange: (value) {
-            //print(value);
             controller.index.value = value;
           },
           tabs: const [
