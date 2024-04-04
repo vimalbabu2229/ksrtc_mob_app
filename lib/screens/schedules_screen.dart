@@ -21,10 +21,9 @@ class ScheduleScreen extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 45, 0, 10),
+              padding: const EdgeInsets.fromLTRB(0, 55, 0, 10),
               child: Text(
                 "Today's Schedule  ",
                 style: GoogleFonts.montserrat(
