@@ -158,6 +158,7 @@ class ScheduleScreen extends StatelessWidget {
                         itemCount: 10,
                         itemBuilder: (context, index) {
                           return Container(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
                             height: 100,
                             decoration: const BoxDecoration(
                               border: Border(
@@ -167,85 +168,85 @@ class ScheduleScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            // child: Row(
-                            //   children: [
-                            //     Container(
-                            //       width: double.infinity,
-                            //       decoration: const BoxDecoration(
-                            //         borderRadius: BorderRadius.only(
-                            //           topLeft: Radius.circular(10.0),
-                            //           bottomLeft: Radius.circular(10.0),
-                            //         ),
-                            //         image: DecorationImage(
-                            //           image: AssetImage(
-                            //               'assets/profile/Icon3.png'), // Replace with your image asset path
-                            //           fit: BoxFit.cover,
-                            //         ),
-                            //       ),
-                            //     ),
-                            //     // const Padding(
-                            //     //   padding: EdgeInsets.all(10.0),
-                            //     //   child: Column(
-                            //     //     crossAxisAlignment:
-                            //     //         CrossAxisAlignment.start,
-                            //     //     children: [
-                            //     //       Row(
-                            //     //         mainAxisAlignment:
-                            //     //             MainAxisAlignment.spaceBetween,
-                            //     //         children: [
-                            //     //           Text(
-                            //     //             'startTime', // Access data from your list
-                            //     //             style: TextStyle(
-                            //     //               color: Colors.white,
-                            //     //               fontSize: 16.0,
-                            //     //               fontWeight: FontWeight.bold,
-                            //     //             ),
-                            //     //           ),
-                            //     //           Text(
-                            //     //             'endTime', // Access data from your list
-                            //     //             style: TextStyle(
-                            //     //               color: Colors.white,
-                            //     //               fontSize: 14.0,
-                            //     //             ),
-                            //     //           ),
-                            //     //         ],
-                            //     //       ),
-                            //     //       SizedBox(height: 5.0),
-                            //     //       Text(
-                            //     //         'from', // Access data from your list
-                            //     //         style: TextStyle(
-                            //     //           color: Colors.white,
-                            //     //           fontSize: 14.0,
-                            //     //         ),
-                            //     //       ),
-                            //     //       SizedBox(height: 5.0),
-                            //     //       Row(
-                            //     //         children: [
-                            //     //           Icon(Icons.arrow_forward_ios_rounded,
-                            //     //               size: 20.0, color: Colors.grey),
-                            //     //           SizedBox(width: 5.0),
-                            //     //           Text(
-                            //     //             'to', // Access data from your list
-                            //     //             style: TextStyle(
-                            //     //               color: Colors.white,
-                            //     //               fontSize: 14.0,
-                            //     //             ),
-                            //     //           ),
-                            //     //         ],
-                            //     //       ),
-                            //     //       SizedBox(height: 5.0),
-                            //     //       Text(
-                            //     //         'runningTime', // Access data from your list
-                            //     //         style: TextStyle(
-                            //     //           fontSize: 12.0,
-                            //     //           color: Colors.white,
-                            //     //         ),
-                            //     //       ),
-                            //     //     ],
-                            //     //   ),
-                            //     // ),
-                            //   ],
-                            // ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 25, 0, 25),
+                                  child:
+                                      Image.asset('assets/profile/Icon3.png'),
+                                ),
+                                Column(
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              10, 13, 20, 10),
+                                          child: Text(
+                                            '3:40\nParassala',
+                                            style: GoogleFonts.montserrat(
+                                                textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1),
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                            textAlign: TextAlign.left,
+                                            softWrap: false,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              10, 13, 20, 10),
+                                          child: Text(
+                                            'NH',
+                                            style: GoogleFonts.montserrat(
+                                              textStyle: const TextStyle(
+                                                color: Color.fromRGBO(
+                                                    255, 255, 255, 1),
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                            softWrap: false,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              10, 13, 0, 10),
+                                          child: Text(
+                                            '3:45\nKaliyikkavila',
+                                            style: GoogleFonts.montserrat(
+                                                textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1),
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                            textAlign: TextAlign.right,
+                                            softWrap: false,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      'Running Time  - 5 mins ',
+                                      style: GoogleFonts.montserrat(
+                                          textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 0.5),
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400)),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           );
                         },
                       ))
