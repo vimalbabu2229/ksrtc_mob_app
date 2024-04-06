@@ -112,16 +112,17 @@ class LeaveScreen extends StatelessWidget {
                                   const SizedBox(
                                     width: 10,
                                   ),
-                                  Text(
-                                    ' Leave type',
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                        color: Color.fromRGBO(16, 16, 16, 1),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w200,
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Leave Type',
                                       ),
+                                      style: GoogleFonts.montserrat(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ),
@@ -160,16 +161,17 @@ class LeaveScreen extends StatelessWidget {
                                   const SizedBox(
                                     width: 10,
                                   ),
-                                  Text(
-                                    ' Leave From',
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                        color: Color.fromRGBO(16, 16, 16, 1),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w200,
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Leave From',
                                       ),
+                                      style: GoogleFonts.montserrat(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ),
@@ -208,16 +210,17 @@ class LeaveScreen extends StatelessWidget {
                                   const SizedBox(
                                     width: 10,
                                   ),
-                                  Text(
-                                    ' Leave To',
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                        color: Color.fromRGBO(16, 16, 16, 1),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w200,
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Leave To',
                                       ),
+                                      style: GoogleFonts.montserrat(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ),
@@ -251,18 +254,19 @@ class LeaveScreen extends StatelessWidget {
                               width: double.infinity,
                               margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                               child: Padding(
-                                padding: const EdgeInsets.all(20),
-                                child: Text(
-                                  'Write here',
-                                  style: GoogleFonts.montserrat(
-                                    textStyle: const TextStyle(
-                                      color: Color.fromRGBO(16, 16, 16, 1),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w200,
+                                  padding:
+                                      const EdgeInsets.only(top: 10, left: 25),
+                                  child: Expanded(
+                                    child: TextField(
+                                      decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Write here',
+                                      ),
+                                      style: GoogleFonts.montserrat(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                  ),
-                                ),
-                              ),
+                                  )),
                             ),
                           ])),
 

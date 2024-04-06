@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:ksrtc_mob_app/screens/profile_page.dart';
-import 'package:ksrtc_mob_app/screens/schedules_screen.dart';
+import 'package:ksrtc_mob_app/views/profile_page.dart';
+import 'package:ksrtc_mob_app/views/schedules_screen.dart';
 
 class BottomNavigationBarController extends GetxController {
   RxInt index = 0.obs;

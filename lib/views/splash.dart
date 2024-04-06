@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/screens/login.dart';
+import 'package:ksrtc_mob_app/views/login.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

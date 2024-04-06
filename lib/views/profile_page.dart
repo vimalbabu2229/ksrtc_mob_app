@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/screens/leavepage.dart';
+import 'package:ksrtc_mob_app/views/leavepage.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -93,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          //details cotainer
+          //details container
           Expanded(
             child: Container(
               padding:
