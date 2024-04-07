@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ksrtc_mob_app/views/login.dart';
-import 'package:ksrtc_mob_app/views/schedules_screen.dart';
+import 'package:ksrtc_mob_app/views/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'KSRTC Scheduling',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

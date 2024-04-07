@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/views/otp_page.dart';
+import 'package:ksrtc_mob_app/views/navigation.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class OTPScreen extends StatefulWidget {
+  const OTPScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<OTPScreen> createState() => _OTPScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const Icon(Icons.directions_bus_outlined,
                   color: Color(0xFFA40606), size: 100),
               //const SizedBox(height: 20),
-              Text('Welcome',
-                  style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          color: Color(0xFF334D6E), fontSize: 33))),
+
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -61,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: TextField(
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
-                        hintText: 'Phone number',
+                        hintText: 'Enter OTP',
                         hintStyle: TextStyle(
                           fontSize: 16,
                         ),
@@ -70,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.phone,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
-                        LengthLimitingTextInputFormatter(10),
+                        LengthLimitingTextInputFormatter(6),
                       ],
                     ),
                   ),
@@ -83,12 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 51,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(const OTPScreen());
+                    Get.to(const NavigationScreen());
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF3E4073),
                       foregroundColor: Colors.white),
-                  child: Text('Generate OTP',
+                  child: Text('Submit',
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
                         fontSize: 16,
