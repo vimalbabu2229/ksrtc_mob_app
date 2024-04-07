@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:intl/intl.dart';
+
 
 
 // ignore: must_be_immutable
@@ -15,8 +17,10 @@ class MyWidget extends StatelessWidget {
    MyWidget({super.key});
   
   get context => null;
-    
-    TextEditingController _dateController =TextEditingController();
+
+  final TextEditingController _startDateController = TextEditingController();
+  final TextEditingController _endDateController = TextEditingController();
+   // TextEditingController _dateController =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -262,16 +266,21 @@ class MyWidget extends StatelessWidget {
              ),
               Expanded(
                 child: TextField(
-                  controller: _dateController,
+                  controller: _startDateController,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Date from',   
                 
               ),
-
+              readOnly: true,
+ 
               style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w600),
-              onTap: () async {
+              onTap: ()
+               async 
+              {
               
+             
+               
                 // ignore: unused_local_variable
                 DateTime? datePicked = await showDatePicker(
                   context: context,
@@ -279,6 +288,10 @@ class MyWidget extends StatelessWidget {
                   firstDate: DateTime(2000), 
                   lastDate: DateTime(2100),
                   );
+                  if (datePicked != null) {
+                String formattedDate = DateFormat('dd-MM-yyyy').format(datePicked);
+                _startDateController.text = formattedDate;
+              }
 
               },
              
@@ -361,12 +374,15 @@ class MyWidget extends StatelessWidget {
              ),
               Expanded(
                 child: TextField(
-                  controller: _dateController,
+                  controller: _endDateController,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Date from',   
+                hintText: 'Date To',
+                   
                 
               ),
+              readOnly: true,
+              
 
               style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w600),
               onTap: () async {
@@ -378,6 +394,12 @@ class MyWidget extends StatelessWidget {
                   firstDate: DateTime(2000), 
                   lastDate: DateTime(2100),
                   );
+                   if (datePicked != null) {
+                    String formattedEndDate =
+                        DateFormat('dd-MM-yyyy').format(datePicked);
+                    _endDateController.text = formattedEndDate;
+                    
+                  }
 
               },
              
