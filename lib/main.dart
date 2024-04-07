@@ -6,7 +6,9 @@ import 'package:get/get.dart';
 // import 'package:ksrtc_app/widgets/vimal4.dart';
 // import 'home.dart';
 //import 'package:ksrtc_app/get1.dart';
-import 'package:ksrtc_app/homepage.dart';
+import 'package:ksrtc_app/setting.dart';
+//import 'package:ksrtc_app/homepage.dart';
+//import 'package:ksrtc_app/profilepage.dart';
 void main(){
   runApp(MyApp());
 }
