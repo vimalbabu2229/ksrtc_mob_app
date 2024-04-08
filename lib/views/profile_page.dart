@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ksrtc_mob_app/views/leavepage.dart';
+import 'package:ksrtc_mob_app/views/settings.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -38,7 +39,9 @@ class ProfileScreen extends StatelessWidget {
                         icon: const Icon(Icons.settings_outlined),
                         iconSize: 30,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(const SettingsScreen());
+                        },
                       ),
                     ],
                   ),

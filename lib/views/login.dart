@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/views/otp_page.dart';
+import 'package:ksrtc_mob_app/views/navigation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController phonecontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: phonecontroller,
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
                         hintText: 'Phone number',
@@ -82,8 +85,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 190,
                 height: 51,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Get.to(const OTPScreen());
+                  onPressed: () async {
+                    //Get.to(const OTPScreen());
+                    final SharedPreferences sharedPreferences =
+                        await SharedPreferences.getInstance();
+                    sharedPreferences.setString(
+                        'phonenumber', phonecontroller.text);
+                    Get.to(const NavigationScreen());
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF3E4073),

@@ -8,7 +8,7 @@ class NavigationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BottomNavigationBarController controller =
+    BottomNavigationBarController pagecontroller =
         Get.put(BottomNavigationBarController());
 
     return Scaffold(
@@ -20,7 +20,7 @@ class NavigationScreen extends StatelessWidget {
           activeColor: Colors.blueAccent,
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 75),
           onTabChange: (value) {
-            controller.index.value = value;
+            pagecontroller.index.value = value;
           },
           tabs: const [
             GButton(
@@ -34,7 +34,7 @@ class NavigationScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Obx(() => controller.pages[controller.index.value]),
+      body: Obx(() => pagecontroller.pages[pagecontroller.index.value]),
     );
   }
 }

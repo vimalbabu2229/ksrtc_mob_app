@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:ksrtc_mob_app/views/splash.dart';
 
 void main() {

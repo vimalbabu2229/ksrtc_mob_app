@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.6
+  shared_preferences: ^2.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,10 +40,16 @@ dependencies:
   google_fonts: ^6.2.1
   google_nav_bar: ^5.0.6
   http: ^1.2.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/profile/logo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
