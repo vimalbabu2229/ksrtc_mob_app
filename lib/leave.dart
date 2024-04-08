@@ -17,7 +17,8 @@ class MyWidget extends StatelessWidget {
    MyWidget({super.key});
   
   get context => null;
-
+  TextEditingController leavetext =TextEditingController();
+  TextEditingController details =TextEditingController();
   final TextEditingController _startDateController = TextEditingController();
   final TextEditingController _endDateController = TextEditingController();
    // TextEditingController _dateController =TextEditingController();
@@ -183,11 +184,16 @@ class MyWidget extends StatelessWidget {
              ),
               Expanded(
                 child: TextField(
+                  controller: leavetext,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Leave Type',   
+              //   focusedBorder: OutlineInputBorder(
+              //     borderRadius: BorderRadius.circular(30),
+              //     //borderSide: BorderSide(color: Colors.white10)
+              //   )
                 
-              ),
+               ),
 
               style: GoogleFonts.montserrat(fontSize: 15,fontWeight: FontWeight.w600),
               
@@ -434,6 +440,7 @@ class MyWidget extends StatelessWidget {
              margin: EdgeInsets.only(left: 17,right: 17,top: 16,),
              padding: EdgeInsets.only(left:70 ),
              child:TextField(
+              controller: details,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Details' 
@@ -496,7 +503,14 @@ class MyWidget extends StatelessWidget {
              width:158,
              margin: EdgeInsets.only(left: 150,right: 150,top: 21.5,bottom:21),
 
-             child:ElevatedButton(onPressed: (){}, 
+             child:ElevatedButton(onPressed: (){
+              String uleave = leavetext.text.toString();
+              String ustartdate = _startDateController.text.toString();
+              String uenddate =_endDateController.text.toString();
+              String udetails = details.text.toString();
+
+              print("Leave Type:$uleave, Date from:$ustartdate,Date To:$uenddate,Details:$udetails");
+             }, 
             style:ButtonStyle(
                backgroundColor:MaterialStateProperty.all(Color.fromRGBO(224, 229, 255, 1)) ,
               shape: MaterialStateProperty.all(
