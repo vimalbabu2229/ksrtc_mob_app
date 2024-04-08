@@ -15,6 +15,7 @@ class LeaveScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: const Color.fromRGBO(177, 184, 222, 11),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -318,6 +319,7 @@ class LeaveScreen extends StatelessWidget {
                           ])),
 
                       //last container
+
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -404,7 +406,7 @@ class LeaveScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ]),
               ),
             ),

@@ -1,10 +1,10 @@
 import 'dart:async';
+import 'package:ksrtc_mob_app/views/login.dart';
 import 'package:ksrtc_mob_app/views/navigation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/views/login_old.dart';
 
 String? finalphonenumber;
 
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Timer(
           const Duration(seconds: 3),
           () => Get.to(finalphonenumber == null
-              ? const LoginScreenOld()
+              ? const LoginScreen()
               : const NavigationScreen()));
     });
   }
