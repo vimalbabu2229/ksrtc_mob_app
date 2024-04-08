@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/views/login.dart';
+import 'package:ksrtc_mob_app/views/login_old.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -89,7 +89,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     final SharedPreferences sharedPreferences =
                         await SharedPreferences.getInstance();
                     sharedPreferences.remove('phonenumber');
-                    Get.to(const LoginScreen());
+                    //Get.to(const LoginScreen());
+                    Get.to(() => LoginScreenOld());
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(

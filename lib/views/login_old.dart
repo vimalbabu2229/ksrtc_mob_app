@@ -3,15 +3,17 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ksrtc_mob_app/views/navigation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class OTPScreen extends StatefulWidget {
-  const OTPScreen({super.key});
+class LoginScreenOld extends StatefulWidget {
+  const LoginScreenOld({super.key});
 
   @override
-  State<OTPScreen> createState() => _OTPScreenState();
+  State<LoginScreenOld> createState() => _LoginScreenOldState();
 }
 
-class _OTPScreenState extends State<OTPScreen> {
+class _LoginScreenOldState extends State<LoginScreenOld> {
+  final TextEditingController phonecontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,10 @@ class _OTPScreenState extends State<OTPScreen> {
               const Icon(Icons.directions_bus_outlined,
                   color: Color(0xFFA40606), size: 100),
               //const SizedBox(height: 20),
-
+              Text('Welcome',
+                  style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                          color: Color(0xFF334D6E), fontSize: 33))),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -56,9 +61,10 @@ class _OTPScreenState extends State<OTPScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: phonecontroller,
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
-                        hintText: 'Enter OTP',
+                        hintText: 'Phone number',
                         hintStyle: TextStyle(
                           fontSize: 16,
                         ),
@@ -67,7 +73,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       keyboardType: TextInputType.phone,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
-                        LengthLimitingTextInputFormatter(6),
+                        LengthLimitingTextInputFormatter(10),
                       ],
                     ),
                   ),
@@ -79,14 +85,19 @@ class _OTPScreenState extends State<OTPScreen> {
                 width: 190,
                 height: 51,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    //Get.to(const OTPScreen());
+                    final SharedPreferences sharedPreferences =
+                        await SharedPreferences.getInstance();
+                    sharedPreferences.setString(
+                        'phonenumber', phonecontroller.text);
                     // Get.to(const NavigationScreen());
                     Get.to(() => NavigationScreen());
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF3E4073),
                       foregroundColor: Colors.white),
-                  child: Text('Submit',
+                  child: Text('Generate OTP',
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
                         fontSize: 16,

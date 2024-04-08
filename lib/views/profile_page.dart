@@ -40,7 +40,8 @@ class ProfileScreen extends StatelessWidget {
                         iconSize: 30,
                         color: Colors.white,
                         onPressed: () {
-                          Get.to(const SettingsScreen());
+                          // Get.to(const SettingsScreen());
+                          Get.to(() => SettingsScreen());
                         },
                       ),
                     ],
@@ -274,27 +275,6 @@ class ProfileScreen extends StatelessWidget {
                                   ))
                             ],
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsets.only(left: 20),
-                          //   child: DropdownButton<String>(
-                          //     value: selectedValue,
-                          //     onChanged: (value) {},
-                          //     items: const [
-                          //       DropdownMenuItem(
-                          //         value: 'Option 1',
-                          //         child: Text('Option 1'),
-                          //       ),
-                          //       DropdownMenuItem(
-                          //         value: 'Option 2',
-                          //         child: Text('Option 2'),
-                          //       ),
-                          //       DropdownMenuItem(
-                          //         value: 'Option 3',
-                          //         child: Text('Option 3'),
-                          //       ),
-                          //     ],
-                          //   ),
-                          // )
                         ],
                       )),
                   //date of join
@@ -346,7 +326,7 @@ class ProfileScreen extends StatelessWidget {
             child: Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(const LeaveScreen());
+                  Get.to(LeaveScreen());
                 },
                 style: ButtonStyle(
                   backgroundColor:

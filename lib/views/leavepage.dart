@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class LeaveScreen extends StatelessWidget {
-  const LeaveScreen({super.key});
+  LeaveScreen({super.key});
+
+  get context => null;
+  final TextEditingController leavetext = TextEditingController();
+  final TextEditingController details = TextEditingController();
+  final TextEditingController _startDateController = TextEditingController();
+  final TextEditingController _endDateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +121,7 @@ class LeaveScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: TextField(
+                                      controller: leavetext,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Leave Type',
@@ -163,13 +171,32 @@ class LeaveScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: TextField(
+                                      controller: _startDateController,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Leave From',
                                       ),
+                                      readOnly: true,
                                       style: GoogleFonts.montserrat(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600),
+                                      onTap: () async {
+                                        // ignore: unused_local_variable
+                                        DateTime? datePicked =
+                                            await showDatePicker(
+                                          context: context,
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime(2000),
+                                          lastDate: DateTime(2100),
+                                        );
+                                        if (datePicked != null) {
+                                          String formattedDate =
+                                              DateFormat('dd-MM-yyyy')
+                                                  .format(datePicked);
+                                          _startDateController.text =
+                                              formattedDate;
+                                        }
+                                      },
                                     ),
                                   )
                                 ],
@@ -212,13 +239,32 @@ class LeaveScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: TextField(
+                                      controller: _endDateController,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Leave To',
                                       ),
+                                      readOnly: true,
                                       style: GoogleFonts.montserrat(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600),
+                                      onTap: () async {
+                                        // ignore: unused_local_variable
+                                        DateTime? datePicked =
+                                            await showDatePicker(
+                                          context: context,
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime(2000),
+                                          lastDate: DateTime(2100),
+                                        );
+                                        if (datePicked != null) {
+                                          String formattedEndDate =
+                                              DateFormat('dd-MM-yyyy')
+                                                  .format(datePicked);
+                                          _endDateController.text =
+                                              formattedEndDate;
+                                        }
+                                      },
                                     ),
                                   )
                                 ],
@@ -258,6 +304,7 @@ class LeaveScreen extends StatelessWidget {
                                       const EdgeInsets.only(top: 10, left: 25),
                                   child: Expanded(
                                     child: TextField(
+                                      controller: details,
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Write here',
@@ -315,7 +362,17 @@ class LeaveScreen extends StatelessWidget {
                                       top: 21.5,
                                       bottom: 21),
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      String uleave = leavetext.text.toString();
+                                      String ustartdate =
+                                          _startDateController.text.toString();
+                                      String uenddate =
+                                          _endDateController.text.toString();
+                                      String udetails = details.text.toString();
+
+                                      print(
+                                          "Leave Type:$uleave, Date from:$ustartdate,Date To:$uenddate,Details:$udetails");
+                                    },
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
