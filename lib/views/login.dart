@@ -17,32 +17,27 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _otpController = TextEditingController();
 
   void _sendOTP() async {
-    // Get the phone number from the text field
     String phoneNumber = _phoneNumberController.text.trim();
 
     // Make a POST request to send OTP
     try {
       final response = await http.post(
         Uri.parse(
-            'https://78f3-2401-4900-4912-1c4c-cc9a-5800-aac6-4822.ngrok-free.app/accounts/login-with-otp/'),
+            'https://tightly-guiding-heron.ngrok-free.app/api/accounts/login-with-otp/'),
         body: {'phone_number': phoneNumber},
       );
 
       if (response.statusCode == 200) {
-        // OTP sent successfully
         print('OTP sent successfully');
       } else {
-        // Handle error
-        print('Failed to send OTP: ${response.body}');
+        print('Failed to send OTP');
       }
     } catch (e) {
-      // Handle connection error
-      print('Error sending OTP: $e');
+      print('Error sending OTP');
     }
   }
 
   void _verifyOTP() async {
-    // Get the phone number and OTP from the text fields
     String phoneNumber = _phoneNumberController.text.trim();
     String otp = _otpController.text.trim();
 
@@ -50,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
       final response = await http.post(
         Uri.parse(
-            'https://78f3-2401-4900-4912-1c4c-cc9a-5800-aac6-4822.ngrok-free.app/accounts/validate-otp/'),
+            'https://tightly-guiding-heron.ngrok-free.app/api/accounts/validate-otp/'),
         body: {'phone_number': phoneNumber, 'otp': otp},
       );
 
@@ -58,14 +53,12 @@ class _LoginScreenState extends State<LoginScreen> {
         final SharedPreferences sharedPreferences =
             await SharedPreferences.getInstance();
         sharedPreferences.setString('phonenumber', _phoneNumberController.text);
-        // OTP validation successful, proceed with login
+
         Get.to(const NavigationScreen());
       } else {
-        // Invalid OTP
         print('Invalid OTP');
       }
     } catch (e) {
-      // Handle connection error
       print('Error validating OTP: $e');
     }
   }

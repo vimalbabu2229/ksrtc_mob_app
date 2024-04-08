@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ksrtc_mob_app/models/post.dart';
+import 'package:ksrtc_mob_app/models/posts.dart';
 import 'package:ksrtc_mob_app/services/remote_service.dart';
 
 class ScheduleScreen extends StatefulWidget {
